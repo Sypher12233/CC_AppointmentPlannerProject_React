@@ -22,7 +22,7 @@ export const AppointmentsPage = ({
     e.preventDefault();
 
     // Add contact info and clear data;
-    handleAppointments({ currentName, contact, date, time });
+    handleAppointments(currentName, contact, date, time);
 
     // reset the state variables hence clearing the form fields;
     setCurrentName("");

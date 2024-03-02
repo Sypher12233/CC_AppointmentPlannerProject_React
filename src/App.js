@@ -23,28 +23,20 @@ function App() {
   contacts and appointments
   */
 
-  function handleContacts(obj) {
+  function handleContacts(name, phone, email) {
     try {
-      const newContact = {
-        name: obj.name,
-        phone: obj.phone,
-        email: obj.email,
-      };
-      setContacts([...contacts, newContact]);
+      setContacts([...contacts, { name: name, phone: phone, email: email }]);
     } catch (e) {
       console.error("Error adding new Contact: " + e.message);
     }
   }
 
-  function handleAppointments(obj) {
+  function handleAppointments(currentName, contact, date, time) {
     try {
-      const newAppointment = {
-        name: obj.currentName,
-        contact: obj.contact,
-        date: obj.date,
-        time: obj.time,
-      };
-      setAppointments([...appointments, newAppointment]);
+      setAppointments([
+        ...appointments,
+        { name: currentName, contact: contact, date: date, time: time },
+      ]);
     } catch (e) {
       console.error("Error adding new Appointment: " + e.message);
     }
